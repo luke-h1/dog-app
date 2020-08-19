@@ -40,3 +40,7 @@ i:hover{
 i { 
   color: #fff;
 }
+
+.results2 { 
+  opacity: 0; // uncomment to see random nubmer 
+}

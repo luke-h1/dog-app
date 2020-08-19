@@ -1,16 +1,21 @@
-const API_URL = `https://dog.ceo/api/breeds/image/random`;
+// const API_URL = `https://dog.ceo/api/breeds/image/random`;
 const btn = document.getElementById('getDogs').addEventListener('click', getImages);
 const results = document.getElementById('results');
 // API RESPONSE
 // MESSAGE: URL
 // STATUS: SUCCESS
 
+
+const API_URL = `https://dog.ceo/api/breeds/image/random`;
+
+
 async function getImages() {
     try {
-        let start = new Date().getTime();
+        let start = new Date().getTime(); 
         await fetch(API_URL)
             .then((res) => res.json())
             .then((res) => {
+                
                 console.log(res);
                 const output  = ` 
                 <div class="wrapper"> 
@@ -34,3 +39,4 @@ async function getImages() {
         console.log(e);
     }
 }
+
