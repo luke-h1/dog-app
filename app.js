@@ -1,23 +1,21 @@
-// const API_URL = `https://dog.ceo/api/breeds/image/random`;
-const btn = document.getElementById('getDogs').addEventListener('click', getImages);
+const btn = document
+    .getElementById('getDogs')
+    .addEventListener('click', getImages);
 const results = document.getElementById('results');
 // API RESPONSE
 // MESSAGE: URL
 // STATUS: SUCCESS
 
-
 const API_URL = `https://dog.ceo/api/breeds/image/random`;
-
 
 async function getImages() {
     try {
-        let start = new Date().getTime(); 
+        let start = new Date().getTime();
         await fetch(API_URL)
             .then((res) => res.json())
             .then((res) => {
-                
                 console.log(res);
-                const output  = ` 
+                const output = ` 
                 <div class="wrapper"> 
                 <div class="card mb-3">
                 <img class="card-img-top" src="${res.message}" alt="Card image cap">
@@ -28,8 +26,8 @@ async function getImages() {
                 </div>
                 </div> 
         `;
-        const results = document.querySelector('.results'); 
-        results.innerHTML = output;
+                const results = document.querySelector('.results');
+                results.innerHTML = output;
 
                 let end = new Date().getTime();
                 let time = end - start;
@@ -39,4 +37,3 @@ async function getImages() {
         console.log(e);
     }
 }
-
