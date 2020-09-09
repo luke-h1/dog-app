@@ -22,12 +22,10 @@ header {
   border-radius: 10px;
 }
 
-
-a { 
+a {
   cursor: pointer;
-
 }
 
-a:hover { 
+a:hover {
   color: #333;
 }
