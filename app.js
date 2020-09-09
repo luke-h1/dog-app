@@ -11,9 +11,15 @@ function hideLoading() {
   loading.style.display = 'none';
 }
 
+function clearState() {
+  dogOutput.innerHTML = '';
+}
+
 async function getDogData(e) {
   e.preventDefault();
   try {
+    clearState();
+
     showLoading();
     let start = new Date().getTime();
     const searchTerm = query.value;
