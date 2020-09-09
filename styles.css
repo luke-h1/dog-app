@@ -9,21 +9,7 @@ header {
   margin-bottom: 5em;
 }
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper > * {
-  width: 50%;
-  margin-left: 30em;
-}
-
-
+} */
