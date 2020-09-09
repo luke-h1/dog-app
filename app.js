@@ -7,57 +7,28 @@ async function getDogData(e) {
   try {
     let start = new Date().getTime();
     const searchTerm = query.value;
-    const API_URL = `https://dog.ceo/api/breed/${searchTerm}/images/random`;
+    const API_URL = `https://cors-anywhere.herokuapp.com/https://dog.ceo/api/breed/${searchTerm}/images/random/5`;
     const res = await fetch(`${API_URL}`);
-    const json = await res.json();
+    const data = await res.json();
     let end = new Date().getTime();
     let time = end - start;
     console.log(`API Execution Time: ${time} Milliseconds`);
-    showDogData(json);
+    addToDOM(data);
   } catch (error) {
     console.log(error);
   }
 }
 
-function showDogData(json) {
-  console.log(json);
-  // message with json
-  // message with status
+function addToDOM(data) {
+  const div = document.createElement('div');
+  div.innerHTML = data.message
+    .map(
+      (dog) => `
+      <img class="col s6 center-align responsive-img"  src="${dog}" />
+      `
+    )
+    .join('');
+  dogOutput.appendChild(div);
 }
 
-// EVENT LISTENERS
 form.addEventListener('submit', getDogData);
-
-// https://dog.ceo/api/breed/${query}/images/random
-
-// async function getImages() {
-//   try {
-//     let start = new Date().getTime();
-//     await fetch(API_URL)
-//       .then((res) => res.json())
-//       .then((res) => {
-//         console.log(res);
-//         const results = document.querySelector('.results');
-//         // console.log(res.message)
-
-//         // obj.forEach((item) => {
-//         //   results.innerHTML += `
-//         //                 <div class="wrapper">
-//         //             <div class="card mb-3">
-//         //             <img class="card-img-top" src="${res.message}" alt="Card image cap">
-//         //             <div class="card-body">
-//         //               <h5 class="card-title">Dogs ✅</h5>
-//         //               <p class="card-text"></p>
-//         //               <p class="card-text"><small class="text-muted"></small></p>
-//         //             </div>
-//         //             </div>
-//         //                 `;
-//         // });
-//       });
-//     let end = new Date().getTime();
-//     let time = end - start;
-//     console.log(`API Execution Time: ${time} Milliseconds`);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
