@@ -21,3 +21,13 @@ header {
   margin: 0 auto;
   border-radius: 10px;
 }
+
+
+a { 
+  cursor: pointer;
+
+}
+
+a:hover { 
+  color: #333;
+}
