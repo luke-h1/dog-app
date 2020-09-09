@@ -13,3 +13,11 @@ header {
   display: flex;
   flex-direction: column;
 } */
+
+.loading {
+  display: none;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
