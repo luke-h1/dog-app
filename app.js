@@ -41,7 +41,9 @@ function addToDOM(data) {
   div.innerHTML = data.message
     .map(
       (dog) => `
+      <div class="container"> 
       <img class="col s6 center-align responsive-img"  src="${dog}" />
+        </div>
       `
     )
     .join('');
