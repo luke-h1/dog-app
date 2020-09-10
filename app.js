@@ -23,7 +23,7 @@ async function getDogData(e) {
     showLoading();
     let start = new Date().getTime();
     const searchTerm = query.value;
-    const API_URL = `https://cors-anywhere.herokuapp.com/https://dog.ceo/api/breed/${searchTerm}/images/random/5`;
+    const API_URL = `https://dog.ceo/api/breed/${searchTerm}/images/random/5`;
     const res = await fetch(`${API_URL}`);
     const data = await res.json();
     let end = new Date().getTime();
